@@ -147,6 +147,3 @@ int main(){
 //int getColumnTotal – takes a two-dimensional array and integer, returns the total of the column in the array corresponding to the integer value
 //int getHighestInRow – takes a two-dimensional array and integer, returns the highest value in the row of the array, corresponding to the integer value
 //int getLowestInRow – takes a two-dimensional array and integer, returns the lowest value in the row of the array, corresponding to the integer value.
-//
-//
-
