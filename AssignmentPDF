@@ -1,0 +1,23 @@
+Computer Science 1081 – Assignment #09
+Program #1 (worth 200 points)
+Write a program that prompts the user for values to fill a 4x5 array (matrix). Create a menu driven program within a loop that prompts the user if they want to: display the total of all of the cells in the matrix ; get the average of all of the cells in the matrix ; get the total of a specific row (prompt for which row) ; get the total of any column (prompt for the column) ; get the highest value in a row (prompt for which row). Include an “Exit” option in the menu. Continue to prompt the user for menu actions until they select the “Exit” option. Perform needed error checking.
+The program should have the following functions:
+int getTotal – takes a two-dimensional array, and returns the total of all the values
+double getAverage – takes a two-dimensional array, and returns the average of all of the values
+int getRowTotal – takes a two-dimensional array and integer, returns the total of the row in the array corresponding to the integer value
+int getColumnTotal – takes a two-dimensional array and integer, returns the total of the column in the array corresponding to the integer value
+int getHighestInRow – takes a two-dimensional array and integer, returns the highest value in the row of the array, corresponding to the integer value
+int getLowestInRow – takes a two-dimensional array and integer, returns the lowest value in the row of the array, corresponding to the integer value.
+
+
+
+
+
+Program #2
+Write a program utilizes three integer variables, and three functions. The first function (getValues) should get a value from the user, and store it in the parameter, for each parameter. The second function (doubleValues) should double the value stored in each parameter. The third function (displayValues) should display each parameter. For all of the parameter, you will either use pass by value, or a pointer. You will not use reference parameters in this program.
+Note that not all three functions in this program will require pointers, only use the pointers where you need them in order to complete the task.
+Sample Outputs:
+Enter an integer: 5
+Enter an integer: 4
+Enter an integer: 3
+The values doubled are: 10, 8, 6 Press any key to continue . . .
