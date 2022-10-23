@@ -5,14 +5,14 @@
 #include<cmath>
 #include<algorithm>
 using namespace std;
-int a, b, row, total=0, total1=0, column, userInput,rowTotal=0, columnTotal=0,highestValue, lowestValue;
 int values[4][5];
-double avg;
 
 void getValues(){
+    int a, b;
     cout<<"Enter values for the 4x5 array matrix: "<<endl;
-    for(int a=1; a<=4; a++){
-        for (int b=1; b<=5; b++){
+    //change a back to 4
+    for(a=1; a<=2; a++){
+        for (b=1; b<=5; b++){
   
     cout<<"Enter the value for row "<< a << " and column " <<b<<": ";
             cin>>values[a][b];
@@ -27,57 +27,71 @@ void getValues(){
 }
 
 int getTotal(){
-    for(int a=1; a<=5; a++){
-        for (int b=1; b<=5; b++){
+    int a, b, total=0;
+    for( a=1; a<=4; a++){
+        for ( b=1; b<=5; b++){
             total+=values[a][b];
         }
     }
-    return total;
+    cout<<"The totoal is: "<<total<<endl;
+   return total;
 }
 
 double getAverage(){
-    for(int a=1; a<=4; a++){
-        for (int b=1; b<=5; b++){
+    int a, b, total=0;
+    double avg;
+    for( a=1; a<=4; a++){
+        for (b=1; b<=5; b++){
             total+=values[a][b];
         }
     }
     avg=total/20;
+    cout<<"The average of the values is: "<<avg<<endl;
     return avg;
 }
 
 int getRowTotal(int row){
-        for (int b=1; b<=5; b++){
+    int b, rowTotal=0;
+        for ( b=1; b<=5; b++){
             rowTotal+=values[row][b];
     }
+    cout<<"The total of row "<<row<<" is: "<<rowTotal<<endl;
     return rowTotal;
 }
 
 int getColumnTotal(int column){
-    for(int a=1; a<=4;a++){
+    int a, columnTotal=0;
+    for(a=1; a<=4;a++){
         columnTotal+=values[a][column];
     }
+    cout<<"The total of column "<<column<<" is: "<<columnTotal<<endl;
     return columnTotal;
 }
 
 int getHighestInRow(int row){
+    int highestValue;
    highestValue= max({values[row][1],values[row][2],values[row][3],values[row][4],values[row][5], });
+    cout<<"The highest value of row "<<row<<" is: "<<highestValue<<endl;
     return highestValue;
 }
 
 int getLowestInRow(int row){
+    int lowestValue ;
     lowestValue = min({values[row][1],values[row][2],values[row][3],values[row][4],values[row][5], });
+    cout<<"The lowestValue value of row "<<row<<" is: "<<lowestValue<<endl;
     return lowestValue ;
 }
 
-int getChoice(){
-    cout<<"Please select a calculation for the 4x5 array matrix.";
-    cin>>userInput;
-    if(userInput >7){
-        cout<<"Error. Number must be between 1-7. Retry: ";
-        cin>>userInput;
-    }
-    return userInput;
-}
+//int getChoice(){
+//    int userInput;
+//    cout<<"Please select a calculation for the 4x5 array matrix.";
+//    cin>>userInput;
+//    if(userInput >7){
+//        cout<<"Error. Number must be between 1-7. Retry: ";
+//        cin>>userInput;
+//    }
+//    return userInput;
+//}
 
 void showMenu(){
     cout<< "1: The total of all the values" <<endl;
@@ -90,51 +104,59 @@ void showMenu(){
 }
 
 int main(){
+   
+    int userInput, row, column;
     getValues();
     showMenu();
-    getChoice();
-    while(userInput!=7){
+   // getChoice();
+
+    cout<<"Please select a calculation for the 4x5 array matrix.";
+    cin>>userInput;
+    if(userInput >7){
+        cout<<"Error. Number must be between 1-7. Retry: ";
+        cin>>userInput;
+    }
+    do{
     switch(userInput){
         case 1: getTotal();
-            cout<<"The total is: "<< total<<endl;
+       
             break;
         case 2: getAverage();
-            cout<<"The average of all values is: "<<avg<<endl;
+     
             break;
         case 3:
             cout<<"Which row would you like to calculate: ";
             cin>>row;
             getRowTotal(row);
-            cout<<"The toal of row "<<row<< " is: "<<rowTotal<<endl;
             break;
         case 4:
             cout<<"Which column would you like to calculate: ";
             cin>>column;
             getColumnTotal(column);
-            cout<<"The toal of column "<< column<<" is: "<<columnTotal<<endl;
             break;
         case 5:
             cout<<"Which row would you like to find the highest value in?";
             cin>>row;
             getHighestInRow(row);
-            cout<<"The highest value in row "<<row<<" is: "<<highestValue<<endl;
+           
             break;
         case 6:
             cout<<"Which row would you like to find the lowest value in?";
             cin>>row;
             getLowestInRow(row);
-            cout<<"The lowest value in row "<<row<<" is: "<<lowestValue<<endl;
+         
             break;
         case 7:
             cout<<"Goodbye."<<endl;
             return 0;
        }
-        showMenu();
-        getChoice();
+    }while(userInput!=7);
+   //     getChoice();
+   // }
+   
     }
-    }
 
 
 
 
-//x
+
