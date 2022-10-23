@@ -10,8 +10,8 @@ int values[4][5];
 void getValues(){
     int a, b;
     cout<<"Enter values for the 4x5 array matrix: "<<endl;
-    //change a back to 4
-    for(a=1; a<=2; a++){
+  
+    for(a=1; a<=4; a++){
         for (b=1; b<=5; b++){
   
     cout<<"Enter the value for row "<< a << " and column " <<b<<": ";
@@ -82,17 +82,6 @@ int getLowestInRow(int row){
     return lowestValue ;
 }
 
-//int getChoice(){
-//    int userInput;
-//    cout<<"Please select a calculation for the 4x5 array matrix.";
-//    cin>>userInput;
-//    if(userInput >7){
-//        cout<<"Error. Number must be between 1-7. Retry: ";
-//        cin>>userInput;
-//    }
-//    return userInput;
-//}
-
 void showMenu(){
     cout<< "1: The total of all the values" <<endl;
     cout<<"2: The average of all values "<<endl;
@@ -104,25 +93,21 @@ void showMenu(){
 }
 
 int main(){
-   
     int userInput, row, column;
     getValues();
-    showMenu();
-   // getChoice();
-
+    do{
+        showMenu();
     cout<<"Please select a calculation for the 4x5 array matrix.";
     cin>>userInput;
     if(userInput >7){
         cout<<"Error. Number must be between 1-7. Retry: ";
         cin>>userInput;
     }
-    do{
+    
     switch(userInput){
         case 1: getTotal();
-       
             break;
         case 2: getAverage();
-     
             break;
         case 3:
             cout<<"Which row would you like to calculate: ";
@@ -138,25 +123,30 @@ int main(){
             cout<<"Which row would you like to find the highest value in?";
             cin>>row;
             getHighestInRow(row);
-           
             break;
         case 6:
             cout<<"Which row would you like to find the lowest value in?";
             cin>>row;
             getLowestInRow(row);
-         
-            break;
+                break;
         case 7:
             cout<<"Goodbye."<<endl;
             return 0;
        }
     }while(userInput!=7);
-   //     getChoice();
-   // }
-   
+
     }
 
-
-
-
+//Computer Science 1081 – Assignment #09
+//Program #1 (worth 200 points)
+//Write a program that prompts the user for values to fill a 4x5 array (matrix). Create a menu driven program within a loop that prompts the user if they want to: display the total of all of the cells in the matrix ; get the average of all of the cells in the matrix ; get the total of a specific row (prompt for which row) ; get the total of any column (prompt for the column) ; get the highest value in a row (prompt for which row). Include an “Exit” option in the menu. Continue to prompt the user for menu actions until they select the “Exit” option. Perform needed error checking.
+//The program should have the following functions:
+//int getTotal – takes a two-dimensional array, and returns the total of all the values
+//double getAverage – takes a two-dimensional array, and returns the average of all of the values
+//int getRowTotal – takes a two-dimensional array and integer, returns the total of the row in the array corresponding to the integer value
+//int getColumnTotal – takes a two-dimensional array and integer, returns the total of the column in the array corresponding to the integer value
+//int getHighestInRow – takes a two-dimensional array and integer, returns the highest value in the row of the array, corresponding to the integer value
+//int getLowestInRow – takes a two-dimensional array and integer, returns the lowest value in the row of the array, corresponding to the integer value.
+//
+//
 
